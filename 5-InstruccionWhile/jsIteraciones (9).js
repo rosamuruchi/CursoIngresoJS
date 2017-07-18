@@ -5,8 +5,8 @@ function Mostrar()
 	var positivo=0;
 	var negativo=1;
 	var numero;
-	var maximo;
-	var minimo;
+	var numMaximo=0;
+	var numMinimo=100;
 	// declarar variables
 	
 	var respuesta='si';
@@ -15,19 +15,23 @@ function Mostrar()
 	{
 		numero=prompt("ingresar el numero");
 		numero=parseInt(numero);
-		if (numero<positivo)
+
+		if (numero<numMinimo)
 		{
-			
+			numMinimo=numero;
 		}
-		else 
+		if (numero>numMaximo)
 		{
-			
+			numMaximo=numero
 		}
+		
 
 		respuesta=prompt("continuar?");	
 	
 	}
 
+	document.getElementById('maximo').value=numMaximo;
+	document.getElementById('minimo').value=numMinimo;
 
 
 
