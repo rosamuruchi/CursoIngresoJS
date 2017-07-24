@@ -34,33 +34,38 @@ function Mostrar()
 		console.log("ver nota",notamenor);*/
 
 
-
-	if (contador==1)
+	while(respuesta=='si')
 	{
-		contador=contador+1
 		nota=prompt("ingrese nota");
-	}
-	else
-	{
-		if (notamayor<nota)
+		nota=parseInt(nota);
+		if (contador==1)
 		{
-			notamayor=nota;
+			contador=contador+1
+			nota=prompt("ingrese nota");
 		}
-		if (notamenor>nota)
+		else
 		{
-			notamenor=nota;
+			if (nota>notamayor)
+			{
+				notamayor=nota;
+				acumulador=acumulador+notamayor;
+				
+			}
+			if (nota<notamenor)
+			{
+				notamenor=nota;
+				acumulador=acumulador+notamenor;
+			}
+			console.log("vuelta",contador+1)
 		}
-		console.log("vuelta",contador+1)
+		
+		respuesta=prompt("continuar?");
 	}
-	console.log("ver nota",notamayor);
-
-	console.log("ver nota",notamenor);
-
-
-
-
-
-document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/contador;
+		
+		console.log("ver notamayor",notamayor);
+		console.log("ver notamenor",notamenor);
+		
+		document.getElementById('suma').value=acumulador;
+		document.getElementById('promedio').value=acumulador/contador;
 
 }//FIN DE LA FUNCIÓN
